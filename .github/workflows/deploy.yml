@@ -42,7 +42,7 @@ jobs:
       - name: Upload artifact bundle
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./.output/public" # Standard TanStack Start / Nitro static asset export target
+          path: "./dist/client" # Client static asset directory produced by Vite build
 
       - name: Deploy to GitHub Pages
         id: deployment
