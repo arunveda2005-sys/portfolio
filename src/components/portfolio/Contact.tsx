@@ -40,9 +40,9 @@ export function Contact() {
       emailjs
         .sendForm(
           "service_o9y4xoq",    // Your configured Gmail Personal Service ID
-          "YOUR_TEMPLATE_ID",   // Replace with your EmailJS Template ID (e.g. template_xyz)
+          "template_rsp1cvz",   // Live EmailJS Template ID
           formRef.current,
-          "YOUR_PUBLIC_KEY"     // Replace with your EmailJS Account Public Key
+          "CG3cg_vdo1rGAGeB1"   // Verified EmailJS Account Public Key
         )
         .then(
           () => {
