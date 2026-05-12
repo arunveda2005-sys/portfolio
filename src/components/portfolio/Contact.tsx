@@ -114,11 +114,11 @@ export function Contact() {
               className="bg-[#2E313D] border border-white/5 space-y-5 rounded-2xl p-8 shadow-lg"
             >
               <div className="grid gap-5 sm:grid-cols-2">
-                {/* EmailJS matching variables via standard name attributes */}
-                <FloatingInput label="Your Name" name="user_name" type="text" required />
-                <FloatingInput label="Your Email" name="user_email" type="email" required />
+                {/* EmailJS matching variables via standard template bindings */}
+                <FloatingInput label="Your Name" name="name" type="text" required />
+                <FloatingInput label="Your Email" name="email" type="email" required />
               </div>
-              <FloatingInput label="Subject" name="subject" type="text" />
+              <FloatingInput label="Subject" name="title" type="text" />
               <FloatingTextarea label="Message" name="message" required />
               
               <button
