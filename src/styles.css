@@ -1,0 +1,150 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-purple: var(--neon-purple);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-pink: var(--neon-pink);
+  --color-amber: var(--amber);
+  --color-slate-card: var(--slate-card);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 3s ease-in-out infinite;
+  --animate-gradient: gradient 8s linear infinite;
+  --animate-blink: blink 1s steps(2) infinite;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-fade-up: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+:root {
+  --radius: 0.875rem;
+  --background: #22242C;
+  --foreground: #F3F4F6;
+  --card: #2A2C36;
+  --card-foreground: #F3F4F6;
+  --popover: #2A2C36;
+  --popover-foreground: #F3F4F6;
+  --primary: #F5A524;
+  --primary-foreground: #1B1C22;
+  --secondary: #323542;
+  --secondary-foreground: #F3F4F6;
+  --muted: #2E303C;
+  --muted-foreground: #9CA3AF;
+  --accent: #F5A524;
+  --accent-foreground: #1B1C22;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #F5A524;
+
+  --neon-blue: #3B82F6;
+  --neon-purple: #8B5CF6;
+  --neon-cyan: #F5A524; /* Mapped to amber for seamless theme reuse */
+  --neon-pink: #EC4899;
+  --amber: #F5A524;
+  --slate-card: #2E313D;
+}
+
+.dark {
+  --background: #22242C;
+  --foreground: #F3F4F6;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes glow {
+  0%,100% { box-shadow: 0 0 20px rgba(245, 165, 36, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(245, 165, 36, 0.4); }
+}
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    /* Clean charcoal background without excessive multicolor neon noise */
+    background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(46, 49, 61, 0.6), transparent 80%);
+    background-attachment: fixed;
+  }
+  h1,h2,h3,h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+}
+
+@utility glass {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+}
+@utility text-gradient {
+  color: var(--color-amber);
+}
+@utility bg-gradient-neon {
+  background-color: var(--color-amber);
+}
+@utility grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+@utility neon-border {
+  position: relative;
+  isolation: isolate;
+}
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
