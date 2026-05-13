@@ -92,7 +92,7 @@ export function Hero() {
                 <span className="h-px w-6 bg-[#F5A524]" /> Introduction
               </p>
               
-              <h2 className="mt-4 font-sans text-2xl sm:text-3xl font-normal leading-snug text-white tracking-wide">
+              <h2 className="mt-4 font-sans text-2xl sm:text-3xl font-normal italic leading-snug text-white tracking-wide">
                 <span className="text-[#F5A524] text-4xl leading-none not-italic">"</span>
                 I build intelligent, scalable systems that turn complex data into production-ready AI solutions.
                 <span className="text-[#F5A524] text-4xl leading-none not-italic">"</span>
