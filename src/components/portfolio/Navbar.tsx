@@ -19,32 +19,44 @@ export function Navbar() {
           Arun
         </a>
 
-        {/* Desktop Minimalist Links mirroring Template layout */}
-        <ul className="hidden md:flex items-center gap-8 font-display text-base font-medium text-[#9CA3AF]">
-          {links.map((l) => (
-            <li key={l.href} className="relative">
-              <a
-                href={l.href}
-                className={`transition hover:text-white ${l.active ? "text-white font-semibold" : ""}`}
-              >
-                {l.label}
-              </a>
-              {/* Template's subtle amber dot directly beneath the active element */}
-              {l.active && (
-                <span className="absolute left-1/2 -bottom-2.5 h-1 w-1 -translate-x-1/2 rounded-full bg-[#F5A524]" />
-              )}
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center gap-4">
+          {/* Desktop Minimalist Links mirroring Template layout */}
+          <ul className="hidden md:flex items-center gap-8 font-display text-base font-medium text-[#9CA3AF] mr-2">
+            {links.map((l) => (
+              <li key={l.href} className="relative">
+                <a
+                  href={l.href}
+                  className={`transition hover:text-white ${l.active ? "text-white font-semibold" : ""}`}
+                >
+                  {l.label}
+                </a>
+                {/* Template's subtle amber dot directly beneath the active element */}
+                {l.active && (
+                  <span className="absolute left-1/2 -bottom-2.5 h-1 w-1 -translate-x-1/2 rounded-full bg-[#F5A524]" />
+                )}
+              </li>
+            ))}
+          </ul>
 
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="text-[#9CA3AF] hover:text-white md:hidden"
-          aria-label="Menu"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* High-Contrast Resume CTA Button */}
+          <a
+            href="https://drive.google.com/file/d/1VaQNRv_pEnuV-asPPTfHc450tkZBaFbk/view?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full bg-[#F5A524] px-4 py-1.5 text-xs font-bold text-[#1B1C22] shadow-[0_0_15px_rgba(245,165,36,0.3)] hover:bg-[#F5A524]/90 hover:scale-105 transition duration-200"
+          >
+            Resume
+          </a>
+
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-[#9CA3AF] hover:text-white md:hidden"
+            aria-label="Menu"
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Drawer */}

@@ -3,39 +3,24 @@ import { Code, Brain, Globe, Cloud, Database, Shield, Terminal } from "lucide-re
 
 const groups = [
   {
-    icon: Code,
-    title: "Programming Languages",
-    skills: ["Python", "Java", "C/C++", "JavaScript"],
-  },
-  {
     icon: Brain,
-    title: "AI/ML & Deep Learning",
-    skills: ["OpenCV", "YOLOv5", "Keras", "Whisper", "Sentence Transformers", "BART"],
-  },
-  {
-    icon: Globe,
-    title: "Web Development",
-    skills: ["React", "Node.js", "Express.js", "FastAPI", "REST APIs", "MERN Stack"],
+    title: "Core AI / ML & Vision",
+    skills: ["Python", "OpenCV", "YOLOv5", "Keras", "Whisper", "Sentence Transformers", "BART", "Scikit-Learn"],
   },
   {
     icon: Cloud,
     title: "Cloud & DevOps",
-    skills: ["AWS", "Docker", "Kubernetes"],
+    skills: ["AWS", "Docker", "Kubernetes", "CI/CD Pipelines", "Git", "GitHub"],
   },
   {
-    icon: Database,
-    title: "Databases",
-    skills: ["MongoDB", "MySQL", "SQLite"],
-  },
-  {
-    icon: Terminal,
-    title: "Developer Tools",
-    skills: ["Selenium", "PyTest", "Git", "GitHub", "Postman"],
+    icon: Globe,
+    title: "Full-Stack & Backend",
+    skills: ["React", "Node.js", "Express.js", "FastAPI", "REST APIs", "MongoDB", "MySQL", "JavaScript/TypeScript"],
   },
   {
     icon: Shield,
-    title: "Cybersecurity & Pentesting",
-    skills: ["Kali Linux", "Metasploit", "Metasploitable", "Nmap", "Wireshark", "Burp Suite", "OWASP ZAP"],
+    title: "Security & Systems",
+    skills: ["Agentic Middleware", "Blockchain Auditing", "Kali Linux", "Metasploit", "Nmap", "Wireshark", "OWASP ZAP", "Burp Suite"],
   },
 ];
 
@@ -51,9 +36,9 @@ export function Skills() {
         <SectionHeader
           eyebrow="Tech Stack"
           title="Skills & Capabilities"
-          description="A modern toolkit spanning intelligent systems, cloud-native engineering, full-stack web, and offensive security."
+          description="A scannable, core toolkit spanning intelligent systems, cloud-native engineering, full-stack web, and offensive security."
         />
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {groups.map((g, i) => (
             <Reveal key={g.title} delay={i * 0.05}>
               <div className="group relative h-full overflow-hidden rounded-2xl bg-[#2E313D] border border-white/5 p-6 transition hover:-translate-y-1 hover:border-[#F5A524]/40 duration-300 shadow-lg">

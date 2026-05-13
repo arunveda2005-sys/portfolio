@@ -4,6 +4,7 @@ import { About } from "@/components/portfolio/About";
 import { Education } from "@/components/portfolio/Education";
 import { Skills } from "@/components/portfolio/Skills";
 import { Certifications } from "@/components/portfolio/Certifications";
+import { Recognition } from "@/components/portfolio/Recognition";
 import { Projects } from "@/components/portfolio/Projects";
 import { Services } from "@/components/portfolio/Services";
 import { Contact } from "@/components/portfolio/Contact";
@@ -20,6 +21,7 @@ export default function App() {
       <Skills />
       <Education />
       <Certifications />
+      <Recognition />
       <Contact />
       <Footer />
     </main>

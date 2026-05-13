@@ -10,6 +10,8 @@ type Project = {
   tech: string[];
   highlights: string[];
   gradient: string;
+  challenges?: string[];
+  solutions?: string[];
 };
 
 const projects: Project[] = [
@@ -26,6 +28,12 @@ const projects: Project[] = [
       "Pipeline runs at a steady 30 FPS",
     ],
     gradient: "from-neon-cyan/30 to-neon-blue/30",
+    challenges: [
+      "High latency when computing YOLOv5 detection, perspective transformations, and K-Means clustering concurrently on high-resolution streams.",
+    ],
+    solutions: [
+      "Optimized pipeline throughput by multi-threading video capture, downscaling feature frames for clustering, and batching vector operations to maintain a locked 30 FPS processing rate.",
+    ],
   },
   {
     title: "Bookie – AI-Powered Video Analysis",
@@ -40,6 +48,12 @@ const projects: Project[] = [
       "Full-stack architecture with scalable APIs",
     ],
     gradient: "from-neon-purple/30 to-neon-pink/30",
+    challenges: [
+      "Processing memory-intensive audio transcription models and handling extensive context truncation during deep semantic search.",
+    ],
+    solutions: [
+      "Implemented intelligent sliding window chunking for transcriptions and leveraged quantized Sentence Transformers combined with AWS S3 pre-signed asset caching.",
+    ],
   },
   {
     title: "Fingerprint Detection & Classification",
@@ -53,6 +67,12 @@ const projects: Project[] = [
       "Advanced biometric verification pipeline",
     ],
     gradient: "from-neon-blue/30 to-neon-purple/30",
+    challenges: [
+      "Severe class imbalance and unstable gradient convergence when training Siamese similarity matrices on 49,000+ localized impressions.",
+    ],
+    solutions: [
+      "Formulated customized triplet-loss sample mining strategies and dynamic learning rate decay schedules, driving validation ROC-AUC perfectly to 1.00.",
+    ],
   },
   {
     title: "Agentic E-Commerce Security System",
@@ -68,6 +88,12 @@ const projects: Project[] = [
       "Built-in Attacker Console for simulating scraping, SQLi, and exfiltration attacks",
     ],
     gradient: "from-red-500/30 to-orange-500/30",
+    challenges: [
+      "Balancing real-time HTTP traffic feature extraction speed with accurate anomaly scoring without degrading normal checkout flows.",
+    ],
+    solutions: [
+      "Engineered an optimized voting ensemble layer parsing 29+ network features in parallel with Redis-backed state throttling to drop false-positive rates below 0.1%.",
+    ],
   },
 ];
 
@@ -183,6 +209,33 @@ export function Projects() {
                   </li>
                 ))}
               </ul>
+
+              {active.challenges && active.challenges.length > 0 && (
+                <div className="mt-6 pt-5 border-t border-white/5">
+                  <h4 className="text-xs font-mono uppercase tracking-widest text-[#F5A524]">Technical Challenges</h4>
+                  <ul className="mt-2 space-y-2 text-sm text-[#9CA3AF]">
+                    {active.challenges.map((c, idx) => (
+                      <li key={idx} className="leading-relaxed flex gap-2">
+                        <span className="text-[#F5A524] font-bold">•</span> {c}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {active.solutions && active.solutions.length > 0 && (
+                <div className="mt-5">
+                  <h4 className="text-xs font-mono uppercase tracking-widest text-neon-cyan">Solutions & Architecture</h4>
+                  <ul className="mt-2 space-y-2 text-sm text-white font-medium">
+                    {active.solutions.map((s, idx) => (
+                      <li key={idx} className="leading-relaxed flex gap-2">
+                        <span className="text-neon-cyan font-bold">✓</span> {s}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               <div className="mt-6 flex gap-3">
                 <a
                   href="https://github.com/arunveda2005-sys"

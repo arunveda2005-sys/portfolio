@@ -72,6 +72,17 @@ export function About() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between flex-wrap gap-4">
+                  <span className="text-xs font-medium text-[#9CA3AF]">Looking for full curriculum vitae?</span>
+                  <a
+                    href="https://drive.google.com/file/d/1VaQNRv_pEnuV-asPPTfHc450tkZBaFbk/view?usp=sharing"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl bg-[#F5A524] px-4 py-2 text-xs font-bold text-[#1B1C22] hover:bg-[#F5A524]/90 transition duration-200"
+                  >
+                    Download Resume
+                  </a>
+                </div>
               </div>
             </Reveal>
           </div>

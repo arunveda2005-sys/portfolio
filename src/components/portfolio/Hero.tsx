@@ -93,19 +93,29 @@ export function Hero() {
               </p>
               
               <h2 className="mt-4 font-display text-2xl sm:text-3xl font-bold leading-snug text-white">
-                Software Engineer and AI Developer, based in India.
+                I build intelligent, scalable systems that turn complex data into production-ready AI solutions.
               </h2>
               
               <p className="mt-4 text-sm leading-relaxed text-[#9CA3AF]">
-                Results-driven engineer bridging advanced artificial intelligence and high-availability cloud architectures. Specializing in computer vision algorithms, self-pruning neural networks, scalable automated AWS infrastructures, and distributed full-stack web applications built for reliability and performance.
+                Software Engineer and AI Developer specializing in computer vision, autonomous threat detection, and resilient AWS infrastructures. Focused on bridging advanced machine learning models with high-availability, full-stack systems.
               </p>
               
-              <a
-                href="#about"
-                className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#F5A524] hover:underline underline-offset-4"
-              >
-                My story <ArrowRight size={14} />
-              </a>
+              <div className="mt-6 flex flex-wrap items-center gap-4">
+                <a
+                  href="#about"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-[#F5A524] hover:underline underline-offset-4"
+                >
+                  My story <ArrowRight size={14} />
+                </a>
+                <a
+                  href="https://drive.google.com/file/d/1VaQNRv_pEnuV-asPPTfHc450tkZBaFbk/view?usp=sharing"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-white/5 border border-white/10 px-4 py-2 text-xs font-semibold text-white hover:bg-white/10 hover:border-[#F5A524]/40 transition duration-200"
+                >
+                  View Resume
+                </a>
+              </div>
             </motion.div>
           </div>
 
