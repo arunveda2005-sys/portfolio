@@ -35,6 +35,7 @@ const projects: Project[] = [
     solutions: [
       "Optimized pipeline throughput by multi-threading video capture, downscaling feature frames for clustering, and batching vector operations to maintain a locked 30 FPS processing rate.",
     ],
+    githubUrl: "https://github.com/arunveda2005-sys/Football_Analysis",
   },
   {
     title: "RecipeMatcher (ReMa)",
