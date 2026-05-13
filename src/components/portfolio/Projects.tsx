@@ -12,6 +12,7 @@ type Project = {
   gradient: string;
   challenges?: string[];
   solutions?: string[];
+  githubUrl?: string;
 };
 
 const projects: Project[] = [
@@ -34,6 +35,7 @@ const projects: Project[] = [
     solutions: [
       "Optimized pipeline throughput by multi-threading video capture, downscaling feature frames for clustering, and batching vector operations to maintain a locked 30 FPS processing rate.",
     ],
+    githubUrl: "https://github.com/arunveda2005-sys/ReMa",
   },
   {
     title: "Bookie – AI-Powered Video Analysis",
@@ -54,6 +56,7 @@ const projects: Project[] = [
     solutions: [
       "Implemented intelligent sliding window chunking for transcriptions and leveraged quantized Sentence Transformers combined with AWS S3 pre-signed asset caching.",
     ],
+    githubUrl: "https://github.com/arunveda2005-sys/Bookie",
   },
   {
     title: "Fingerprint Detection & Classification",
@@ -94,6 +97,7 @@ const projects: Project[] = [
     solutions: [
       "Engineered an optimized voting ensemble layer parsing 29+ network features in parallel with Redis-backed state throttling to drop false-positive rates below 0.1%.",
     ],
+    githubUrl: "https://github.com/arunveda2005-sys/Ransomware-prevention-and-recovery",
   },
 ];
 
@@ -155,8 +159,22 @@ export function Projects() {
                       </span>
                     ))}
                   </div>
-                  <div className="mt-6 flex items-center gap-2 text-xs font-semibold text-[#F5A524]">
-                    <span>View details</span> <ExternalLink size={12} />
+                  <div className="mt-6 flex items-center justify-between text-xs font-semibold pt-2 border-t border-white/5">
+                    <span className="flex items-center gap-1.5 text-[#F5A524]">
+                      View details <ExternalLink size={12} />
+                    </span>
+                    {p.githubUrl && (
+                      <a
+                        href={p.githubUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-1.5 text-[#9CA3AF] hover:text-white transition duration-200"
+                        title="View Source Repository"
+                      >
+                        <Github size={14} /> <span className="text-[11px] font-mono font-normal">Source</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </button>
@@ -238,12 +256,12 @@ export function Projects() {
 
               <div className="mt-6 flex gap-3">
                 <a
-                  href="https://github.com/arunveda2005-sys"
+                  href={active.githubUrl || "https://github.com/arunveda2005-sys"}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-neon px-4 py-2 text-sm font-semibold text-primary-foreground"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-neon px-4 py-2 text-sm font-semibold text-primary-foreground hover:scale-105 transition"
                 >
-                  <Github size={14} /> View on GitHub
+                  <Github size={14} /> {active.githubUrl ? "View Source Repository" : "View on GitHub"}
                 </a>
               </div>
             </motion.div>
