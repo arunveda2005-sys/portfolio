@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 type Project = {
   title: string;
   tagline: string;
-  category: "AI/ML" | "Cloud" | "Computer Vision";
+  category: "AI/ML" | "Cloud" | "Computer Vision" | "Security";
   tech: string[];
   highlights: string[];
   gradient: string;
@@ -54,9 +54,24 @@ const projects: Project[] = [
     ],
     gradient: "from-neon-blue/30 to-neon-purple/30",
   },
+  {
+    title: "Agentic E-Commerce Security System",
+    tagline: "AI-driven security framework detecting, blocking, and logging web attacks in real-time.",
+    category: "Security",
+    tech: ["Python", "Flask", "React", "Socket.IO", "XGBoost", "Scikit-learn", "MongoDB", "Blockchain"],
+    highlights: [
+      "Ensemble ML pipeline (Isolation Forest, XGBoost, Random Forest, Voting Classifier) analysing 29+ HTTP features",
+      "Autonomous IP blocking & throttling based on real-time risk scores",
+      "Honeytoken injection & smart canary traps to detect data exfiltration attempts",
+      "Immutable blockchain audit trail for tamper-proof security event logging",
+      "Real-time Admin Dashboard with live threat visualisation & breach cost estimation",
+      "Built-in Attacker Console for simulating scraping, SQLi, and exfiltration attacks",
+    ],
+    gradient: "from-red-500/30 to-orange-500/30",
+  },
 ];
 
-const filters = ["All", "AI/ML", "Computer Vision", "Cloud"] as const;
+const filters = ["All", "AI/ML", "Computer Vision", "Cloud", "Security"] as const;
 
 export function Projects() {
   const [filter, setFilter] = useState<(typeof filters)[number]>("All");
