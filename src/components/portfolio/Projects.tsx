@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 type Project = {
   title: string;
   tagline: string;
-  category: "AI/ML" | "Cloud" | "Computer Vision" | "Security";
+  category: "AI/ML" | "Cloud" | "Computer Vision" | "Security" | "Mobile";
   tech: string[];
   highlights: string[];
   gradient: string;
@@ -34,6 +34,27 @@ const projects: Project[] = [
     ],
     solutions: [
       "Optimized pipeline throughput by multi-threading video capture, downscaling feature frames for clustering, and batching vector operations to maintain a locked 30 FPS processing rate.",
+    ],
+  },
+  {
+    title: "RecipeMatcher (ReMa)",
+    tagline: "AI-powered Android app that recommends recipes from your pantry ingredients.",
+    category: "Mobile",
+    tech: ["Java 21", "Kotlin", "Google Gemini API", "Room DB", "Retrofit", "WorkManager", "MVVM"],
+    highlights: [
+      "AI-generated recipes via Google Gemini API tailored to available pantry items",
+      "Smart pantry tracking with expiry date monitoring and automatic status alerts",
+      "Real-time match percentage engine across 1,000+ curated offline recipes",
+      "Auto-generated shopping lists with one-tap pantry transfer on purchase",
+      "Material Design 3 UI with light/dark theme and smooth animations",
+      "Proactive WorkManager notifications for expiry alerts and waste reduction",
+    ],
+    gradient: "from-green-500/30 to-emerald-500/30",
+    challenges: [
+      "Efficiently querying and matching pantry state against 1,000+ recipes in real-time without degrading UI responsiveness on lower-end Android devices.",
+    ],
+    solutions: [
+      "Implemented MVVM architecture with Room DAOs and background Kotlin Coroutines to offload all matching logic from the main thread, delivering smooth real-time match percentage updates.",
     ],
     githubUrl: "https://github.com/arunveda2005-sys/ReMa",
   },
@@ -101,7 +122,7 @@ const projects: Project[] = [
   },
 ];
 
-const filters = ["All", "AI/ML", "Computer Vision", "Cloud", "Security"] as const;
+const filters = ["All", "AI/ML", "Computer Vision", "Mobile", "Cloud", "Security"] as const;
 
 export function Projects() {
   const [filter, setFilter] = useState<(typeof filters)[number]>("All");
